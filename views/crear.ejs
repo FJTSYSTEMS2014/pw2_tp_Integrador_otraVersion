@@ -1,0 +1,72 @@
+<!-- crear registros  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>REGISTRAR USUARIO</title>
+</head>
+
+<body>
+
+  <ul class="list-group"><h3>Usuario conectado: <strong><%= name %></strong></h13>
+    <a> <button onclick="myFunction()"> CERRAR SESIÓN </button></a>
+      <a class="list-group-item list-group-item-primary" aria-current="page" href="/usuarios/tareas">VER TODAS LAS TAREAS DE LOS USUARIOS</a>
+      <a class="list-group-item list-group-item-secondary" aria-current="page" href="/usuarios/listar">VER TODOS LOS USUARIOS</a>
+
+
+  </ul>
+
+  <div class="container mt-4">
+    <div class="card border-secondary">
+      <div class="card-header">Nuevo Registro</div>
+      <div class="card-body">
+        <form action="/usuarios/salvar" method="POST"><img src="../public/img/register.png">
+          <div class="mb-3">
+            <label for="user" class="form-label">Nº Documento</label>
+            <input type="text" class="form-control" id="user1" name="user" value="DNI11.222.333" tabindex="1">
+            <label for="user" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="user2" name="user" value="MI NOMBRE" tabindex="1">
+
+            <label for="user" class="form-label">Fecha de Nacimiento (xxxx-xx-xx)</label>
+            <input type="text" class="form-control" id="user3" name="user" value="2000-01-01" tabindex="1">
+            <label for="user" class="form-label">Domicilio</label>
+            <input type="text" class="form-control" id="user4" name="user" value="MI DOMICILIO" tabindex="1">
+
+            <label for="user" class="form-label">Localidad</label>
+            <input type="text" class="form-control" id="user5" name="user" value="BARILOCHE" tabindex="1">
+
+            <label for="user" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="user6" name="user" value="+549245658" tabindex="1">
+
+            <label for="user" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="user7" name="user" value="USUARIO" tabindex="1">
+            <label for="user" class="form-label">Contraseña</label>
+            <input type="text" class="form-control" id="user8" name="user" value="CONTRASEÑA" tabindex="1">
+
+
+
+            <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+            <a href="/usuarios/listar" class="btn btn-secondary">Cancelar</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous">
+    
+    
+    </script>
+    <script>  function myFunction() {
+      localStorage.clear();
+      window.location = "/logout";
+
+    }</script>
+</body>
+
+</html>

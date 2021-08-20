@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trabajo Integrador - Grupo 3 - PW2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body > <center> 
+    <div class="page-wrapper">    
+        <div class="login-panel"> <img src="../public/img/login-imag.png">
+            <form method="post" action="/login1">
+                <table>
+                    <tr>
+                        <td>Nombre de usuario </td>
+                        <td> <input type="text" name="user" id="user" ></td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña </td>
+                        <td> <input type="password" id="pass" name="password" ></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" class="btn_logic" value="Login"></td>
+                    </tr>
+                </table>
+                <a href="registro" class="btn-register">Register</a>
+            </form>
+        </div>
+    </center>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--  para decir cuando aparece el mensaje de sweer alert -->  
+    <% if(typeof alert != "undefined") { %>
+    <script>  
+    Swal.fire({
+        title: '<%= alertTitulo %>',
+        position: '<%= position %>',
+        text:'<%= mensaje %>',
+        icon: '<%= icon %>',
+        showConfirmButton: '<%= showConfirmButton %>',
+        timer: '<%= timer %>'
+      }).then(()=>{
+          window.location= '/<%=ruta%>'
+      })
+      
+      </script>  <% }  %>
+
+
+
+    </body>
+
+
+</html>
